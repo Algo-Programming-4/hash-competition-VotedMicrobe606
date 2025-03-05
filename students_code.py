@@ -32,8 +32,10 @@ class HashTable:
             lookups +=1
             if self.table[index][0]==word:
                 return self.table[index][1],lookups
-                index = (index + step_size) % self.size
-            return 0, lookups
+            index = (index + step_size) % self.size
+            if lookups > self.size:
+                break
+        return 0, lookups
 
     def get_stats(self):
         used_buckets = sum(1 for bucket in self.table if bucket)  # Count used slots
