@@ -19,7 +19,7 @@ class HashTable:
                 return
             self.collisions +=1
             index = (index + step_size) % self.size
-            if index==original index:
+            if index==original_index:
                 return
         self.table[index] = [word,1]
         
@@ -32,7 +32,7 @@ class HashTable:
             lookups +=1
             if self.table[index][0]==word:
                 return self.table[index][1],lookups
-                index = (index + step_size) % self_size
+                index = (index + step_size) % self.size
             return 0, lookups
 
     def get_stats(self):
@@ -49,5 +49,6 @@ def words_in(word_list):
 
 
 def lookup_word_count(word):
+    global hash_table
     return hash_table.lookup(word)  # Lookup word count
 
