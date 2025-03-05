@@ -1,5 +1,5 @@
 class HashTable:
-    def __init__(self, size=100):  # Initialize hash table with a fixed size
+    def __init__(self, size=50):  # Initialize hash table with a fixed size
         self.size = size
         self.table = [None] * size  # Create empty slots
         self.collisions = 0  # Track collisions
